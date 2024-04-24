@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Send">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rawData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendWithCompressedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rawData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendWithCompressedResponseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendWithCompressedResponseResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompressedSendWithCompressedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rawData" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompressedSendWithCompressedResponseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompressedSendWithCompressedResponseResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompressedSend">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rawData" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompressedSendResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompressedSendResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ativo">
+        <s:complexType />
+      </s:element>
+      <s:element name="AtivoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AtivoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendSoapIn">
+    <wsdl:part name="parameters" element="tns:Send" />
+  </wsdl:message>
+  <wsdl:message name="SendSoapOut">
+    <wsdl:part name="parameters" element="tns:SendResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendWithCompressedResponseSoapIn">
+    <wsdl:part name="parameters" element="tns:SendWithCompressedResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendWithCompressedResponseSoapOut">
+    <wsdl:part name="parameters" element="tns:SendWithCompressedResponseResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompressedSendWithCompressedResponseSoapIn">
+    <wsdl:part name="parameters" element="tns:CompressedSendWithCompressedResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompressedSendWithCompressedResponseSoapOut">
+    <wsdl:part name="parameters" element="tns:CompressedSendWithCompressedResponseResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompressedSendSoapIn">
+    <wsdl:part name="parameters" element="tns:CompressedSend" />
+  </wsdl:message>
+  <wsdl:message name="CompressedSendSoapOut">
+    <wsdl:part name="parameters" element="tns:CompressedSendResponse" />
+  </wsdl:message>
+  <wsdl:message name="AtivoSoapIn">
+    <wsdl:part name="parameters" element="tns:Ativo" />
+  </wsdl:message>
+  <wsdl:message name="AtivoSoapOut">
+    <wsdl:part name="parameters" element="tns:AtivoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ExchangeMessageSoap">
+    <wsdl:operation name="Send">
+      <wsdl:input message="tns:SendSoapIn" />
+      <wsdl:output message="tns:SendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendWithCompressedResponse">
+      <wsdl:input message="tns:SendWithCompressedResponseSoapIn" />
+      <wsdl:output message="tns:SendWithCompressedResponseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompressedSendWithCompressedResponse">
+      <wsdl:input message="tns:CompressedSendWithCompressedResponseSoapIn" />
+      <wsdl:output message="tns:CompressedSendWithCompressedResponseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompressedSend">
+      <wsdl:input message="tns:CompressedSendSoapIn" />
+      <wsdl:output message="tns:CompressedSendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ativo">
+      <wsdl:input message="tns:AtivoSoapIn" />
+      <wsdl:output message="tns:AtivoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ExchangeMessageSoap" type="tns:ExchangeMessageSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Send">
+      <soap:operation soapAction="http://tempuri.org/Send" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendWithCompressedResponse">
+      <soap:operation soapAction="http://tempuri.org/SendWithCompressedResponse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompressedSendWithCompressedResponse">
+      <soap:operation soapAction="http://tempuri.org/CompressedSendWithCompressedResponse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompressedSend">
+      <soap:operation soapAction="http://tempuri.org/CompressedSend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ativo">
+      <soap:operation soapAction="http://tempuri.org/Ativo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ExchangeMessageSoap12" type="tns:ExchangeMessageSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Send">
+      <soap12:operation soapAction="http://tempuri.org/Send" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendWithCompressedResponse">
+      <soap12:operation soapAction="http://tempuri.org/SendWithCompressedResponse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompressedSendWithCompressedResponse">
+      <soap12:operation soapAction="http://tempuri.org/CompressedSendWithCompressedResponse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompressedSend">
+      <soap12:operation soapAction="http://tempuri.org/CompressedSend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ativo">
+      <soap12:operation soapAction="http://tempuri.org/Ativo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ExchangeMessage">
+    <wsdl:port name="ExchangeMessageSoap" binding="tns:ExchangeMessageSoap">
+      <soap:address location="https://homologa.nddcargo.com.br/wsagente/ExchangeMessage.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ExchangeMessageSoap12" binding="tns:ExchangeMessageSoap12">
+      <soap12:address location="https://homologa.nddcargo.com.br/wsagente/ExchangeMessage.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

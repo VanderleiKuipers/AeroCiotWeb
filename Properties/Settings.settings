@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AeroCIOTWeb.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="AeroCIOTWeb_br_com_nddcargo_homologa_ExchangeMessage" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://homologa.nddcargo.com.br/wsagente/ExchangeMessage.asmx</Value>
+    </Setting>
+    <Setting Name="AeroCIOTWeb_br_com_nddcargo_wsagent_ExchangeMessage" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://wsagent.nddcargo.com.br/wsagente/ExchangeMessage.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

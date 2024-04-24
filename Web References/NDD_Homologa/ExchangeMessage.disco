@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://homologa.nddcargo.com.br/wsagente/ExchangeMessage.asmx?wsdl" docRef="https://homologa.nddcargo.com.br/wsagente/ExchangeMessage.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://homologa.nddcargo.com.br/wsagente/ExchangeMessage.asmx" xmlns:q1="http://tempuri.org/" binding="q1:ExchangeMessageSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://homologa.nddcargo.com.br/wsagente/ExchangeMessage.asmx" xmlns:q2="http://tempuri.org/" binding="q2:ExchangeMessageSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>
